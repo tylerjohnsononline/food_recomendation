@@ -2,5 +2,5 @@ food,description,imgfilepath
 burger,,images\burger.png
 spaghetti,
 fajitas,
-salad,
+salad,,images\salad.png
 pork roast,
