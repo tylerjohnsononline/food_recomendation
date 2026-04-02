@@ -1,6 +1,4 @@
-food,description,imgfilepath
-burger,,images\burger.png
-spaghetti,
-fajitas,
-salad,,images\salad.png
-pork roast,
+food,imgfilepath,ingredients,instructions,description,
+burger,images\burger.png,
+salad,images\salad.png,
+pizza,images\pizza.png,
