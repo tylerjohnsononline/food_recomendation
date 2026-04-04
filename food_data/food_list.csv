@@ -1,8 +1,11 @@
 food,imgfilepath,ingredients,instructions,description,
 burger,images\burger.png,
 salad,images\salad.png,
-pizza,images\pizza.png,
+pizza,images\pizza.png,,,calzone
 pork roast
-beef roast and mashed potatoes
-soup 
+beef roast and mashed potatoes eith carrots
+soup
 chicken,,,,grilled chicken or BBQ chicken or fried chicken chicken in soup chicken in salad or air fried chicken
+spaghetti
+Italian sausage
+sloppy Joe's
