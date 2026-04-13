@@ -8,14 +8,10 @@ import webbrowser
 import img_google
 class DataHolder ():
   def __init__(self):
-    self.ingredients_list = ["","",""]
     self.food_path = "food_data\\food_list.csv"
     self.df = pd.read_csv(self.food_path)
-  
 FoodData = DataHolder()
 df = FoodData.df
-# food_path = "food_data\\food_list.csv"
-# df = pd.read_csv(food_path)
 
 def myapp(page: ft.Page):
     
@@ -47,7 +43,8 @@ def myapp(page: ft.Page):
         ingredients.value = str(temp_df["ingredients"][number])
         instructions.value = str(temp_df["instructions"][number])
         
-
+    def dropdown_ingredients_available():
+        pass
 
     page.theme_mode = ft.ThemeMode.DARK  
     input = ft.TextField(value="0", text_align=ft.TextAlign.CENTER, width=100)
@@ -67,6 +64,7 @@ def myapp(page: ft.Page):
     available_ingredients = ft.TextField(value="0", text_align=ft.TextAlign.CENTER, width=100)
     available_ingredients.value =  str(df["description"][starter ])
 
+    selected_ingredients = []
     
     page.add(
         ft.Row(
@@ -79,43 +77,45 @@ def myapp(page: ft.Page):
         )
     )
     def get_options():
-        options = ["pepperoni","sausage"]
+        options = ["pep","blue"]
 
         return [ft.DropdownOption(
             key=option,
             content = ft.Text(value=option)
         )
             for option in options]
-    # def d1_update():
-    #     FoodData.ingredients_list[0] = d1.value
-    # def d2_update():
-    #     FoodData.ingredients_list[1] = d2.value
-    # def d3_update():
-    #     FoodData.ingredients_list[2] = d3.value
-        # self.update() 
-    def recommend_based_on_available_ingredients():
-    #    print([xx.value for xx in  dropdown_ingredients])
-      for xx in  dropdown_ingredients:
-         print(xx.value) 
-    
-    d1 = ft.Dropdown(value= "",editable=True,label="one ingredient you have",options = get_options())
-    d2 = ft.Dropdown(value= "",editable=True,label="one ingredient you have",options = get_options())
-    d3 = ft.Dropdown(value= "",editable=True,label="one ingredient you have",options = get_options())
-    dropdown_ingredients = [d1,d2,d3]
-    on_ingredients = ft.TextButton(content = "Based on ingredients",on_click = recommend_based_on_available_ingredients)
+    def handle_ingredient_dropdown():
+      selected_ingredients += []
+    def handle_ingredient_dropdown_1():
+        print(1)
+    def handle_ingredient_dropdown_2():
+        handle_ingredient_dropdown()
+    def handle_ingredient_dropdown_3():
+        handle_ingredient_dropdown()
+
     page.add(
         ft.ResponsiveRow(
-           controls = dropdown_ingredients
-            
+            controls = [ft.TextButton(content="ingredients based recommendation", on_click=recommend_based_on_ingredients),
+            ft.Dropdown(editable=True,
+                label="one ingredient you have",
+                options = get_options(),
+                on_select = handle_ingredient_dropdown_1,),
+            # ft.Dropdown(editable=True,labeal="one ingredient you have",options = get_options(),on_select = handle_ingredient_dropdown_2,),
+            # ft.Dropdown(editable=True,label="one ingredient you have",options = get_options(),on_select = handle_ingredient_dropdown_3,),
+
+            ]
         )
     )
+
     page.add(
         ft.ResponsiveRow(
-           controls = [on_ingredients]
-            
+           controls = [ft.TextButton(content="drop_down ingredients based recommendation", on_click=dropdown_ingredients_available
+                                     
+           )
+            ]
         )
     )
-    
+
 
 
 
