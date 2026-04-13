@@ -1,7 +1,7 @@
-food,imgfilepath,ingredients,instructions,description,
+food,imgfilepath,ingredients,instructions,description,,
 burger,images\burger.png,
 salad,images\salad.png,
-pizza,images\pizza.png,,,calzone
+pizza,images\pizza.png,pepperoni|sausage,,calzone
 pork roast
 beef roast and mashed potatoes with carrots
 soup,,,Fill a pot with water seasoning and the remaining ingredients boil,
@@ -15,4 +15,4 @@ fried pork chops
 stew
 soup,,,,place a sliced chicken breast in a pot with few cups of water with carrots broccoli and any other vegetables you like boil for one hour.
 hot pot,,,,place food in a pressure cooker/hot pot. a roast works well with some vegetables, carrots, and spices
-eggs,,,,omelet,scrambled,fried,hard boiled,
+eggs,,,,omelet|scrambled|fried|hard boiled
