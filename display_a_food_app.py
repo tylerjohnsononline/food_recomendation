@@ -95,8 +95,32 @@ def myapp(page: ft.Page):
         # self.update() 
     def recommend_based_on_available_ingredients():
     #    print([xx.value for xx in  dropdown_ingredients])
-      for xx in  dropdown_ingredients:
-         print(xx.value) 
+    #   for ingredient in dropdown_ingredients
+      given_ingredients = [str(xx.text) for xx in dropdown_ingredients]
+      print("ingredients supposedly:" ,given_ingredients)#, "\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    #   print([xx.value for xx in dropdown_ingredients])
+      print( df.loc[df["ingredients"].str.contains(given_ingredients[0]) 
+                    & df["ingredients"].str.contains(given_ingredients[1])
+                    & df["ingredients"].str.contains(given_ingredients[2])
+                    ] )
+    #   print(df.loc[("ingredients" == "pepperoni")])#.apply(lambda xx: any(word in xx for word in given_ingredients))])
+      temp_df = df.loc[df["ingredients"].str.contains(given_ingredients[0]) 
+                    & df["ingredients"].str.contains(given_ingredients[1])
+                    & df["ingredients"].str.contains(given_ingredients[2])
+                    ] 
+      temp_df = temp_df.set_index(pd.Index([xx for xx in range(len(temp_df))]))  #df.loc[df["ingredients"].str.contains("pep")]
+      print(len(temp_df), temp_df)
+      number = r.randint(0,len(temp_df))
+        # print(number, temp_df)
+      input.value = str(temp_df["food"][number])
+      image.src = str(temp_df["imgfilepath"][number])
+      description.value = str(temp_df["description"][number])
+      ingredients.value = str(temp_df["ingredients"][number])
+      instructions.value = str(temp_df["instructions"][number])
+        
+
+    #   for xx in  dropdown_ingredients:
+    #      print(xx.value) 
     
     d1 = ft.Dropdown(value= "",editable=True,label="one ingredient you have",options = get_options())
     d2 = ft.Dropdown(value= "",editable=True,label="one ingredient you have",options = get_options())

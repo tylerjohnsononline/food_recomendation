@@ -1,5 +1,5 @@
-food,imgfilepath,ingredients,instructions,description,,
-burger,images\burger.png,
+food,imgfilepath,ingredients,instructions,description
+burger,images\burger.png,ground beef and 
 salad,images\salad.png,
 pizza,images\pizza.png,pepperoni|sausage,,calzone
 pork roast
@@ -14,5 +14,5 @@ shish kabobs
 fried pork chops
 stew
 soup,,,,place a sliced chicken breast in a pot with few cups of water with carrots broccoli and any other vegetables you like boil for one hour.
-hot pot,,,,place food in a pressure cooker/hot pot. a roast works well with some vegetables, carrots, and spices
+hot pot,,,,place food in a pressure cooker/hot pot. a roast works well with some vegetables and spices
 eggs,,,,omelet|scrambled|fried|hard boiled
